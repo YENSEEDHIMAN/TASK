@@ -1,0 +1,24 @@
+{% extends "myapp/base.html" %}
+
+{% block title %}About Us - My Django App{% endblock %}
+
+{% block content %}
+    <h2 style="text-align: center;">About Us</h2>
+
+    <div style="text-align: center; padding: 20px;">
+        <p>
+            Welcome to My Django App! We are dedicated to providing the best service possible.
+        </p>
+        <p>
+            Our team is passionate about delivering high-quality solutions that meet your needs.
+            We believe in innovation, creativity, and a customer-first approach.
+        </p>
+        <p>
+            Feel free to explore our website and learn more about what we do. If you have any questions,
+            don't hesitate to <a href="{% url 'contact' %}">Contact Us</a>.
+        </p>
+        <p>
+            Thank you for visiting!
+        </p>
+    </div>
+{% endblock %}

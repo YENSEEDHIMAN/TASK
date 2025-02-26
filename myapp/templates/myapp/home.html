@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - My Django App</title>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul style="list-style: none; text-align: center; padding: 0;">
+                <li style="display: inline; margin-right: 20px;">
+                    <a href="/">Home</a>
+                </li>
+                <li style="display: inline; margin-right: 20px;">
+                    <a href="{% url 'contact' %}">Contact Us</a>
+                </li>
+                <li style="display: inline;">
+                    <a href="{% url 'about' %}">About Us</a>
+                </li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <center>
+            <h2>Welcome to My Django App!</h2>
+            <p>Your one-stop solution for awesome web experiences.</p>
+        </center>
+
+        <h2>About Us</h2>
+        <p>
+            We are dedicated to delivering high-quality web solutions tailored to your needs. 
+            Our team of experts works tirelessly to ensure that your digital presence is impactful and engaging.
+        </p>
+
+        <h2>Our Services</h2>
+        <ul>
+            <li>Web Development</li>
+            <li>Mobile Application Development</li>
+            <li>Custom Software Solutions</li>
+            <li>Digital Marketing and SEO</li>
+        </ul>
+
+        <h2>Why Choose Us?</h2>
+        <p>
+            Our approach is customer-centric. We believe in creating solutions that not only meet 
+            but exceed your expectations. With our extensive experience and innovative mindset, 
+            we bring your ideas to life.
+        </p>
+        <p>
+            We are committed to:
+            <ul>
+                <li>Quality Assurance</li>
+                <li>Timely Delivery</li>
+                <li>Customer Satisfaction</li>
+                <li>Continuous Support and Maintenance</li>
+            </ul>
+        </p>
+
+        <h2>Contact Us</h2>
+        <p>
+            Have questions or want to discuss your next project? 
+            <a href="{% url 'contact' %}">Contact Us</a> today, and let's get started!
+        </p>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <hr>
+        <p style="text-align: center;">&copy; 2025 My Django App. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

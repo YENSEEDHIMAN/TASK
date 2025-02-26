@@ -1,0 +1,18 @@
+{% extends "myapp/base.html" %}
+
+{% block title %}Contact Us - My Django App{% endblock %}
+
+{% block content %}
+    <h2 style="text-align: center;">Contact Us</h2>
+
+    <!-- Centered Form Container -->
+    <div style="text-align: center;">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div style="text-align: center;">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
