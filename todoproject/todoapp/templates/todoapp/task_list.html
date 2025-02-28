@@ -1,0 +1,26 @@
+{% extends 'todoapp/base.html' %}
+
+{% block content %}
+    <h2 style="text-align: center; color: #333;">Task List</h2>
+    <p style="text-align: center; color: #777; font-size: 18px;">
+        Here you can see all your tasks.
+    </p>
+    <ul style="list-style: none; padding: 0; max-width: 600px; margin: 0 auto;">
+        {% for task in tasks %}
+        <li style="background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
+            <h3 style="color: #007BFF; margin: 0;">{{ task.title }}</h3>
+            <p style="color: #555; margin: 5px 0;">{{ task.description }}</p>
+            <p style="color: {{ task.completed|yesno:'green,red' }}; font-weight: bold;">
+                Completed: {{ task.completed }}
+            </p>
+            <div style="margin-top: 10px;">
+                <a href="{% url 'update_task' task.id %}" style="text-decoration: none; color: #28a745; margin-right: 10px;">Edit</a> | 
+                <a href="{% url 'delete_task' task.id %}" style="text-decoration: none; color: #dc3545; margin-left: 10px;">Delete</a> | 
+                <a href="{% url 'update_task' task.id %}" style="text-decoration: none; color: #28a745; margin-left: 10px;">Mark as Completed</a> 
+            </div>
+        </li>
+        {% empty %}
+        <p style="text-align: center; color: #777;">No tasks yet.</p>
+        {% endfor %}
+    </ul>
+{% endblock %}
